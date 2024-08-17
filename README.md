@@ -2,14 +2,14 @@ There is custom squid with enable `ssl-bump` and `https_port` see here for more 
 
 ## Simple usage with docker compose or docker run
 
-Docker run: `docker run -p3128:3128 -p3129:3129 -p3126:3126 -p3127:3127 --rm -it eraa/squid-openssl:6.9`
+Docker run: `docker run -p3128:3128 -p3129:3129 -p3126:3126 -p3127:3127 --rm -it eraa/squid-ssl:v6`
 My default rootCA: [rootCA.crt](https://drive.usercontent.google.com/download?id=1fWd6_hY3mqNTu8Tau79iynQetW5KmLpw&export=download)
 
 ### 1. compose.yml
 ```
 services:
   squid:
-    image: eraa/squid-openssl:6.9
+    image: eraa/squid-ssl:v6
     ports:
       - "3128:3128"
       - "3129:3129"
