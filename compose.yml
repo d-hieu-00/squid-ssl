@@ -1,6 +1,6 @@
 services:
   squid:
-    image: eraa/squid-openssl:6.9
+    image: eraa/squid-ssl:v6
     ports:
       - "3128:3128"
       - "3129:3129"

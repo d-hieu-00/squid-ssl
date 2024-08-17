@@ -33,7 +33,7 @@ RUN MAKE=gmake \
 FROM ${BASE_IMAGE}
 
 # Install dependencies for app
-RUN apk add libstdc++ libressl && \
+RUN apk add libstdc++ libressl-dev && \
     mkdir /opt/squid -p
 
 # Copy form the builder
@@ -48,7 +48,7 @@ RUN /opt/squid/libexec/security_file_certgen -c -s /opt/squid/ssl_db -M 4MB && \
     mkdir /opt/squid/var/logs -p && \
     touch /opt/squid/var/logs/access.log && \
     touch /opt/squid/var/logs/cache.log && \
-    chown 777 -R /opt/squid/var/logs /opt/squid/ssl_db
+    chmod 777 -R /opt/squid/var/logs /opt/squid/ssl_db
 
 # Expose Squid's default HTTP and HTTPS ports
 EXPOSE 3128 3129 3127 3126
