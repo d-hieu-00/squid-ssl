@@ -1,0 +1,12 @@
+services:
+  squid:
+    image: eraa/squid-openssl:6.9
+    ports:
+      - "3128:3128"
+      - "3129:3129"
+      - "3126:3126"
+      - "3127:3127"
+    volumes:
+      - "${PWD}/squid.conf:/opt/squid/etc/squid.conf"
+      - "${PWD}/certs:/opt/squid/certs"
+
