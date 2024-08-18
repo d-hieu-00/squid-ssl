@@ -17,7 +17,7 @@ services:
       - "3127:3127"
     volumes:
       - "${PWD}/squid.conf:/opt/squid/etc/squid.conf"
-      - "${PWD}/certs:/opt/squid/certs"
+      - "${PWD}/certs:/opt/squid/ssl_cert"
 ```
 
 ### 2. squid.conf
